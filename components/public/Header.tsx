@@ -1,47 +1,53 @@
+"use client";
+
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Atom, Zap } from "lucide-react";
 import { useState } from "react";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-white/80 backdrop-blur-sm dark:bg-gray-900/80">
+    <header className="sticky top-0 z-50 w-full border-b border-border bg-background/80 backdrop-blur-md">
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-blue-600 to-purple-600">
-              <span className="text-xl font-bold text-white">T</span>
+          <Link href="/" className="flex items-center space-x-3 group">
+            <div className="relative flex h-10 w-10 items-center justify-center rounded-xl gradient-bg shadow-lg shadow-primary/20 group-hover:shadow-primary/40 transition-all duration-300">
+              <Atom className="h-6 w-6 text-white" />
+              <div className="absolute -top-1 -right-1 h-3 w-3 rounded-full bg-accent animate-pulse-slow" />
             </div>
-            <span className="text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              TitanByte
-            </span>
+            <div className="flex flex-col">
+              <span className="text-xl font-bold gradient-text">
+                TitanByte
+              </span>
+              <span className="text-xs text-muted tracking-wider">SCIENCE & TECH</span>
+            </div>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-6">
+          <nav className="hidden md:flex items-center space-x-1">
             <Link
               href="/"
-              className="text-sm font-medium text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 transition-colors"
+              className="px-4 py-2 text-sm font-medium text-foreground/80 hover:text-primary hover:bg-surface rounded-lg transition-all duration-200"
             >
               Ana Sayfa
             </Link>
             <Link
               href="/category"
-              className="text-sm font-medium text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 transition-colors"
+              className="px-4 py-2 text-sm font-medium text-foreground/80 hover:text-primary hover:bg-surface rounded-lg transition-all duration-200"
             >
               Kategoriler
             </Link>
             <Link
               href="/about"
-              className="text-sm font-medium text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 transition-colors"
+              className="px-4 py-2 text-sm font-medium text-foreground/80 hover:text-primary hover:bg-surface rounded-lg transition-all duration-200"
             >
               Hakkımızda
             </Link>
             <Link
               href="/contact"
-              className="text-sm font-medium text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 transition-colors"
+              className="px-4 py-2 text-sm font-medium text-foreground/80 hover:text-primary hover:bg-surface rounded-lg transition-all duration-200"
             >
               İletişim
             </Link>
@@ -50,7 +56,7 @@ export default function Header() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+            className="md:hidden p-2 rounded-lg hover:bg-surface transition-colors text-foreground"
             aria-label="Menüyü aç"
           >
             {isMenuOpen ? (
@@ -63,32 +69,32 @@ export default function Header() {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <nav className="md:hidden py-4 border-t">
-            <div className="flex flex-col space-y-3">
+          <nav className="md:hidden py-4 border-t border-border animate-slide-up">
+            <div className="flex flex-col space-y-2">
               <Link
                 href="/"
-                className="text-sm font-medium text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 transition-colors"
+                className="px-4 py-3 text-sm font-medium text-foreground/80 hover:text-primary hover:bg-surface rounded-lg transition-all duration-200"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Ana Sayfa
               </Link>
               <Link
                 href="/category"
-                className="text-sm font-medium text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 transition-colors"
+                className="px-4 py-3 text-sm font-medium text-foreground/80 hover:text-primary hover:bg-surface rounded-lg transition-all duration-200"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Kategoriler
               </Link>
               <Link
                 href="/about"
-                className="text-sm font-medium text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 transition-colors"
+                className="px-4 py-3 text-sm font-medium text-foreground/80 hover:text-primary hover:bg-surface rounded-lg transition-all duration-200"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Hakkımızda
               </Link>
               <Link
                 href="/contact"
-                className="text-sm font-medium text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 transition-colors"
+                className="px-4 py-3 text-sm font-medium text-foreground/80 hover:text-primary hover:bg-surface rounded-lg transition-all duration-200"
                 onClick={() => setIsMenuOpen(false)}
               >
                 İletişim
