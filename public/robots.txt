@@ -1,0 +1,15 @@
+# robots.txt for TitanByte
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://titanbyte.com/sitemap.xml
+
+# Disallow admin areas
+Disallow: /admin/
+Disallow: /api/
+
+# Disallow private areas
+Disallow: /_next/
+Disallow: /static/
