@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import typography from "@tailwindcss/typography";
 
 const config: Config = {
   content: [
@@ -53,8 +54,57 @@ const config: Config = {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      typography: {
+        DEFAULT: {
+          css: {
+            maxWidth: "none",
+            color: "var(--foreground)",
+            a: {
+              color: "var(--primary)",
+              "&:hover": {
+                color: "var(--primary-dark)",
+              },
+            },
+            strong: {
+              color: "var(--foreground)",
+            },
+            "ol > li::marker": {
+              color: "var(--primary)",
+            },
+            "ul > li::marker": {
+              color: "var(--primary)",
+            },
+            hr: {
+              borderColor: "var(--border)",
+            },
+            blockquote: {
+              color: "var(--muted)",
+              borderLeftColor: "var(--primary)",
+            },
+            h1: {
+              color: "var(--foreground)",
+            },
+            h2: {
+              color: "var(--foreground)",
+            },
+            h3: {
+              color: "var(--foreground)",
+            },
+            h4: {
+              color: "var(--foreground)",
+            },
+            code: {
+              color: "var(--foreground)",
+            },
+            pre: {
+              color: "var(--foreground)",
+              backgroundColor: "var(--surface)",
+            },
+          },
+        },
+      },
     },
   },
-  plugins: [],
+  plugins: [typography],
 };
 export default config;
