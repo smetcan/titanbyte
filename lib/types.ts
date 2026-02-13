@@ -50,6 +50,7 @@ export interface AdminUser {
   id: string;
   email: string;
   name?: string | null;
+  password: string;
   createdAt: Date;
   updatedAt: Date;
 }
