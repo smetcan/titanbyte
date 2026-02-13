@@ -131,12 +131,12 @@ titanbyte/
 - [x] Authentication (NextAuth.js credentials)
 - [x] TinyMCE editörü (rich text editing)
 - [x] PWA ikonları (dinamik ikon oluşturma)
+- [x] Dark/Light mode toggle (tema değiştirici)
 
 ### Planlanan
 - [ ] shadcn/ui kurulumu
 - [ ] Structured Data (Schema.org)
-- [ ] Vercel deployment
-- [ ] Dark/Light mode toggle (tema değiştirici)
+- [x] Vercel deployment
 - [ ] İletişim formu backend (e-posta gönderimi)
 - [ ] Görüntüleme sayacı (view count)
 - [ ] İlgili içerikler önerisi

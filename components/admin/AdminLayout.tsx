@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import { signOut } from "next-auth/react";
+import { ThemeToggle } from "@/components/public/ThemeToggle";
 
 interface AdminLayoutProps {
   children: React.ReactNode;
@@ -165,13 +166,16 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
                 Admin
               </h1>
             </div>
-            <Link
-              href="/"
-              target="_blank"
-              className="text-sm text-muted hover:text-primary transition-colors"
-            >
-              Siteyi Görüntüle →
-            </Link>
+            <div className="flex items-center gap-4">
+              <ThemeToggle />
+              <Link
+                href="/"
+                target="_blank"
+                className="text-sm text-muted hover:text-primary transition-colors"
+              >
+                Siteyi Görüntüle →
+              </Link>
+            </div>
           </div>
         </header>
 

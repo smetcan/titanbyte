@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/public/Header";
 import Footer from "@/components/public/Footer";
+import { ThemeProvider } from "@/components/public/ThemeProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -64,21 +65,23 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="tr" className="scroll-smooth">
+    <html lang="tr" className="scroll-smooth" suppressHydrationWarning>
       <head>
         <link rel="icon" href="/favicon.ico" />
         <link rel="canonical" href={process.env.NEXT_PUBLIC_SITE_URL || "https://titanbyte.com"} />
-        <meta name="theme-color" content="#3b82f6" />
+        <meta name="theme-color" content="#7c3aed" />
       </head>
       <body className={inter.className}>
-        <a href="#main-content" className="skip-to-content">
-          Ana içeriğe atla
-        </a>
-        <Header />
-        <main id="main-content" className="min-h-screen">
-          {children}
-        </main>
-        <Footer />
+        <ThemeProvider>
+          <a href="#main-content" className="skip-to-content">
+            Ana içeriğe atla
+          </a>
+          <Header />
+          <main id="main-content" className="min-h-screen">
+            {children}
+          </main>
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );
