@@ -10,13 +10,13 @@ TitanByte, bilim ve teknoloji odaklı haber paylaşımlarının yapıldığı bi
 - **Framework:** Next.js 15 (App Router)
 - **Dil:** TypeScript
 - **Styling:** Tailwind CSS
-- **UI Kütüphanesi:** shadcn/ui (planlanıyor)
-- **Rich Text Editor:** TinyMCE (planlanıyor)
+- **UI Kütüphanesi:** shadcn/ui
+- **Rich Text Editor:** TinyMCE
 
 ### Backend
 - **Database:** PostgreSQL (Supabase)
 - **ORM:** Prisma
-- **Authentication:** NextAuth.js (planlanıyor)
+- **Authentication:** NextAuth.js
 - **API:** Next.js API Routes
 
 ### Deployment
@@ -134,7 +134,7 @@ titanbyte/
 - [x] Dark/Light mode toggle (tema değiştirici)
 
 ### Planlanan
-- [ ] shadcn/ui kurulumu
+- [x] shadcn/ui kurulumu
 - [ ] Structured Data (Schema.org)
 - [x] Vercel deployment
 - [ ] İletişim formu backend (e-posta gönderimi)
