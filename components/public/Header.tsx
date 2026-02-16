@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Menu, X, Atom } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { ThemeToggle } from "./ThemeToggle";
 
@@ -13,42 +13,41 @@ export default function Header() {
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-3 group">
-            <div className="relative flex h-10 w-10 items-center justify-center rounded-xl gradient-bg shadow-lg shadow-primary/20 group-hover:shadow-primary/40 transition-all duration-300">
-              <Atom className="h-6 w-6 text-white" />
-              <div className="absolute -top-1 -right-1 h-3 w-3 rounded-full bg-accent animate-pulse-slow" />
+          <Link href="/" className="flex items-center gap-2 group">
+            <div className="flex h-10 w-10 items-center justify-center bg-primary rounded-sm group-hover:bg-primary-dark transition-colors">
+              <span className="text-primary-foreground font-bold text-sm">TB</span>
             </div>
             <div className="flex flex-col">
-              <span className="text-xl font-bold gradient-text">
+              <span className="text-lg font-semibold text-foreground tracking-tight">
                 TitanByte
               </span>
-              <span className="text-xs text-muted tracking-wider">SCIENCE & TECH</span>
+              <span className="text-xs text-muted-foreground tracking-wider font-mono">BİLİM & TEKNOLOJİ</span>
             </div>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-1">
+          <nav className="hidden md:flex items-center gap-1">
             <Link
               href="/"
-              className="px-4 py-2 text-sm font-medium text-foreground/80 hover:text-primary hover:bg-surface rounded-lg transition-all duration-200"
+              className="px-4 py-2 text-sm font-medium text-foreground hover:text-primary hover:bg-surface rounded-md transition-colors"
             >
               Ana Sayfa
             </Link>
             <Link
               href="/category"
-              className="px-4 py-2 text-sm font-medium text-foreground/80 hover:text-primary hover:bg-surface rounded-lg transition-all duration-200"
+              className="px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-surface rounded-md transition-colors"
             >
               Kategoriler
             </Link>
             <Link
               href="/about"
-              className="px-4 py-2 text-sm font-medium text-foreground/80 hover:text-primary hover:bg-surface rounded-lg transition-all duration-200"
+              className="px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-surface rounded-md transition-colors"
             >
               Hakkımızda
             </Link>
             <Link
               href="/contact"
-              className="px-4 py-2 text-sm font-medium text-foreground/80 hover:text-primary hover:bg-surface rounded-lg transition-all duration-200"
+              className="px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-surface rounded-md transition-colors"
             >
               İletişim
             </Link>
@@ -56,17 +55,17 @@ export default function Header() {
           </nav>
 
           {/* Mobile Menu Button */}
-          <div className="flex items-center space-x-2 md:hidden">
+          <div className="flex items-center gap-2 md:hidden">
             <ThemeToggle />
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="p-2 rounded-lg hover:bg-surface transition-colors text-foreground"
+              className="p-2 rounded-md hover:bg-surface transition-colors text-foreground"
               aria-label="Menüyü aç"
             >
               {isMenuOpen ? (
-                <X className="h-6 w-6" />
+                <X className="h-5 w-5" />
               ) : (
-                <Menu className="h-6 w-6" />
+                <Menu className="h-5 w-5" />
               )}
             </button>
           </div>
@@ -74,32 +73,32 @@ export default function Header() {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <nav className="md:hidden py-4 border-t border-border animate-slide-up">
-            <div className="flex flex-col space-y-2">
+          <nav className="md:hidden py-4 border-t border-border animate-fade-in">
+            <div className="flex flex-col gap-1">
               <Link
                 href="/"
-                className="px-4 py-3 text-sm font-medium text-foreground/80 hover:text-primary hover:bg-surface rounded-lg transition-all duration-200"
+                className="px-4 py-3 text-sm font-medium text-foreground hover:text-primary hover:bg-surface rounded-md transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Ana Sayfa
               </Link>
               <Link
                 href="/category"
-                className="px-4 py-3 text-sm font-medium text-foreground/80 hover:text-primary hover:bg-surface rounded-lg transition-all duration-200"
+                className="px-4 py-3 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-surface rounded-md transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Kategoriler
               </Link>
               <Link
                 href="/about"
-                className="px-4 py-3 text-sm font-medium text-foreground/80 hover:text-primary hover:bg-surface rounded-lg transition-all duration-200"
+                className="px-4 py-3 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-surface rounded-md transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Hakkımızda
               </Link>
               <Link
                 href="/contact"
-                className="px-4 py-3 text-sm font-medium text-foreground/80 hover:text-primary hover:bg-surface rounded-lg transition-all duration-200"
+                className="px-4 py-3 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-surface rounded-md transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 İletişim
